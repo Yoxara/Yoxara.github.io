@@ -1,0 +1,14 @@
+.navbar {
+    background-color: #054277; /* Blue */
+}
+.footer {
+    background-color: #e0dfdf; /* Grey */
+    color: #fcfcfc;
+}
+.dropdown-item {
+    background-color: #053f72;
+    color: #fcfcfc;
+}
+.main-content {
+    margin-top: 500px;
+}
