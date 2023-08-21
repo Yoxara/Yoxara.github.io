@@ -1,1 +1,1 @@
-# www.yoxara.github.io
+# www.yoxarasv.com
