@@ -1,84 +1,77 @@
-/* General Styles */
+/* General */
 body {
-    font-family: 'Times New Roman', serif;
-    padding-top: 100px; /* Space for fixed navbar */
-    background-color: #f8f9fa; /* Light gray background */
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #054277; /* Dark blue */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    color: white;
-}
-
-.navbar-nav .nav-link {
-    color: white;
-    transition: color 0.3s ease-in-out;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #f8d210; /* Bright yellow */
-}
-
-/* Dropdown */
-.dropdown-menu {
-    background-color: #054277;
-}
-
-.dropdown-item {
-    background-color: #054277;
-    color: white;
     transition: background 0.3s ease-in-out;
 }
-
-.dropdown-item:hover {
-    background-color: #0566ad;
+.navbar.scrolled-nav {
+    background: rgba(0, 0, 0, 0.9);
 }
 
-/* Main Content */
-.main-content {
-    padding-top: 100px; /* Fixed margin issue */
+/* Hero Section */
+.hero-section {
+    background: url('hero-bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.hero-section .animate-text {
+    font-size: 3rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+.btn-gradient {
+    background: linear-gradient(45deg, #ff6b6b, #f94c66);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.btn-gradient:hover {
+    transform: scale(1.1);
 }
 
-/* Carousel */
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6); /* More opaque background */
-    padding: 15px;
-    border-radius: 10px;
+/* Features Section */
+.features-section {
+    margin: 80px auto;
+}
+.feature-box {
+    background: #f4f4f4;
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.feature-box:hover {
+    transform: translateY(-10px);
 }
 
 /* Footer */
 .footer {
-    background-color: #333; /* Dark background */
+    background: #111;
+    padding: 30px 0;
+}
+.footer .social-icons i {
     color: white;
-    padding: 20px;
-    text-align: center;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footer .social-icons i:hover {
+    color: #ff6b6b;
 }
 
-/* Buttons */
-.btn-primary {
-    background-color: #054277;
-    border-color: #054277;
-    transition: background 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-    background-color: #0566ad;
-    border-color: #0566ad;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar-nav {
-        text-align: center;
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
     }
-
-    .footer {
-        font-size: 14px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
