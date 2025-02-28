@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-body {
-    font-family: 'Times New Roman', serif;
-     padding-top: 100px;
-}
-
-.navbar-brand {
-    font-weight: bold;
-}
-
-.footer {
-    background-color: #22;
-    color: #fff;
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-}
-
-
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Yoxara S Villamizar, showcasing resume, talks, and contact information.">
     <title>Yoxara S Villamizar</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="styles.css" rel="stylesheet">
 </head>
 
-
 <body>
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" role="navigation">
+    <!-- Fixed Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <a class="navbar-brand" href="#">Yoxara S Villamizar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,26 +28,11 @@ body {
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://lattes.cnpq.br/8648774055790932">Resume</a>
+                    <a class="nav-link" href="http://lattes.cnpq.br/8648774055790932" target="_blank">Resume</a>
                 </li>
-                               <!-- Courses section is commented out -->
-
-  <!--               <li class="nav-item dropdown active">                   -->
-   <!--                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"   -->
-   <!--                      aria-haspopup="true" aria-expanded="false">    -->
-     <!--                    Courses                                         -->
-      <!--               </a>                               -->
-       <!--              <div class="dropdown-menu" aria-labelledby="navbarDropdown">               -->
-        <!--                 <a class="dropdown-item" href="course1.html">Course 1</a>                 -->
-         <!--                <a class="dropdown-item" href="course2.html">Course 2</a>                     -->
-          <!--               <!-- Add more courses here --> 
-               <!--      </div>
-              <!--   </li>              -->
-                <!-- Talks section -->
                 <li class="nav-item">
                     <a class="nav-link" href="Talks.html">My Talks</a>
                 </li>
-                <!-- Contact section -->
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
@@ -76,50 +40,51 @@ body {
         </div>
     </nav>
 
-    <!-- Welcome Message Section -->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12">
-                <!-- Optional Welcome Message Here -->
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Carousel -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Carousel Section -->
+    <div id="myCarousel" class="carousel slide mt-5" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <!-- Example Image -->
-                <!-- <img class="d-block w-100" src="mainfigure.jpg" alt="Main Figure"> -->
+                <img class="d-block w-100" src="mainfigure.jpg" alt="Main Figure">
                 <div class="carousel-caption">
-                    <!-- Caption for Main Figure -->
+                    <h3>Welcome to my website</h3>
                 </div>
             </div>
-            <!-- Additional Carousel Items -->
+            <!-- Additional Carousel Items can be added here -->
         </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 
     <!-- Main Content -->
-    <main role="main" class="container">
-        <div class="jumbotron">
-            <h1>Welcome to Website!</h1>
-            <p class="lead">"Coming Soon!"</p>
+    <main role="main" class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1>Welcome to My Website!</h1>
+            <p class="lead">Exciting content coming soon.</p>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-dark text-white">
+    <footer class="footer mt-auto py-3">
         <div class="container text-center">
-            <p>&copy; 2023 Yoxara S Villamizar</p>
-           <!-- <p>Sígueme en mis redes sociales: [Enlaces a redes sociales]</p>-->
+            <p>&copy; 2024 Yoxara S Villamizar</p>
+            <p>Follow me on:
+                <a href="https://twitter.com" target="_blank">Twitter</a> |
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript components -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Bootstrap JavaScript & Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
