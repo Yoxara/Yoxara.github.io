@@ -1,47 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoxara S Villamizar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yoxara Sánchez Villamizar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
-        <div class="container">
-            <a class="navbar-brand" href="#">Yoxara S Villamizar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://lattes.cnpq.br/8648774055790932">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Talks.html">My Talks</a></li>
-                     <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>  -->
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-4">Welcome</h1>
-            <p class="lead">...</p>
-            <a href="contact.html" class="btn btn-danger btn-lg">Contact me</a>
-        </div>
-    </header>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Yoxara S. Villamizar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#talks">Talks</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    <!-- Footer -->
-    <footer class="footer text-white text-center py-3">
-        <div class="container">
-            <p>&copy; 2024 Yoxara S Villamizar</p>
-        </div>
-    </footer>
+<!-- HERO -->
+<header class="hero-section d-flex align-items-center justify-content-center text-center">
+  <div class="container">
+    <h1 class="display-4 animate-text">Exploring Physics Beyond the Standard Model</h1>
+    <p class="lead mt-3">Dark Matter, Colliders & Theoretical Physics</p>
+    <a href="#contact" class="btn btn-gradient mt-4">Get in Touch</a>
+  </div>
+</header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ABOUT -->
+<section id="about" class="bg-light">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="text-center mx-auto" style="max-width: 800px;">
+      I’m a postdoctoral researcher at LPTHE - Sorbonne Université (CNRS), working on collider physics and dark matter phenomenology...
+    </p>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <h2 class="section-title">Research</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-box">
+          <h5>Dark Matter & LHC</h5>
+          <p>Constraint analysis of full models at LHC, using SModelS and MadGraph frameworks.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <h5>BSM Models</h5>
+          <p>Development and exploration of 3-3-1, 2HDM, and seesaw frameworks, with focus on collider signatures.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <h5>Computational Tools</h5>
+          <p>Python, LaTeX, SARAH, FeynRules, Delphes, MadDM, and more for simulation and analysis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="bg-light">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
+    <p class="text-center">See my full list on <a href="https://inspirehep.net/authors/1785072" target="_blank">INSPIRE-HEP</a>.</p>
+  </div>
+</section>
+
+<!-- TALKS -->
+<section id="talks">
+  <div class="container">
+    <h2 class="section-title">Talks & Posters</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">2025 – “Exploring BSM Frameworks” – CERN Workshop</li>
+      <li class="list-group-item">2024 – “SModelS v3: Going Beyond Z2” – SUSY24, Madrid</li>
+      <li class="list-group-item">2023 – “Beyond Ordinary Matter” – EPSBF</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-light">
+  <div class="container text-center">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: <a href="mailto:yoxara@lpthe.jussieu.fr">yoxara@lpthe.jussieu.fr</a></p>
+    <div class="social-icons mt-3">
+      <a href="https://github.com/Yoxara" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.lpthe.jussieu.fr/" target="_blank"><i class="fas fa-university"></i></a>
+      <a href="https://inspirehep.net/authors/1785072" target="_blank"><i class="fas fa-book"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container text-center">
+    <p>&copy; 2025 Yoxara S. Villamizar</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
