@@ -4,9 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yoxara Sánchez Villamizar</title>
+  <meta name="description" content="Postdoctoral researcher at LPTHE (CNRS–Sorbonne). Collider physics, dark matter, Beyond the Standard Model.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="preload" as="image" href="assets/hero-bg.jpg">
 </head>
 <body>
 
@@ -75,23 +85,60 @@
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
+<!-- PUBLICATIONS (dinámicas desde INSPIRE-HEP) -->
 <section id="publications" class="bg-light">
   <div class="container">
     <h2 class="section-title">Publications</h2>
-    <p class="text-center">See my full list on <a href="https://inspirehep.net/authors/1785072" target="_blank">INSPIRE-HEP</a>.</p>
+
+    <div class="text-center mb-3">
+      <small class="text-muted d-block">Most recent from INSPIRE-HEP</small>
+    </div>
+
+    <div id="publications-list" class="list-group"></div>
+
+    <div class="text-center mt-4">
+      <a class="btn btn-gradient" href="https://inspirehep.net/authors/1785072" target="_blank" rel="noopener">
+        View all on INSPIRE-HEP
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- TALKS -->
+<!-- TALKS (timeline) -->
 <section id="talks">
   <div class="container">
     <h2 class="section-title">Talks & Posters</h2>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">2025 – “Exploring BSM Frameworks” – CERN Workshop</li>
-      <li class="list-group-item">2024 – “SModelS v3: Going Beyond Z2” – SUSY24, Madrid</li>
-      <li class="list-group-item">2023 – “Beyond Ordinary Matter” – EPSBF</li>
-    </ul>
+
+    <div class="timeline">
+      <!-- Añade/duplica items siguiendo este patrón -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-time">2025</div>
+          <h5 class="mb-1">“Exploring BSM Frameworks”</h5>
+          <p class="mb-2 text-muted">CERN Workshop</p>
+          <!-- <a href="slides-2025.pdf" target="_blank" class="timeline-link">Slides</a> -->
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-time">2024</div>
+          <h5 class="mb-1">“SModelS v3: Going Beyond Z2”</h5>
+          <p class="mb-2 text-muted">SUSY24, Madrid</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-time">2023</div>
+          <h5 class="mb-1">“Beyond Ordinary Matter”</h5>
+          <p class="mb-2 text-muted">EPSBF</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -101,9 +148,9 @@
     <h2 class="section-title">Contact</h2>
     <p>Email: <a href="mailto:yoxara@lpthe.jussieu.fr">yoxara@lpthe.jussieu.fr</a></p>
     <div class="social-icons mt-3">
-      <a href="https://github.com/Yoxara" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.lpthe.jussieu.fr/" target="_blank"><i class="fas fa-university"></i></a>
-      <a href="https://inspirehep.net/authors/1785072" target="_blank"><i class="fas fa-book"></i></a>
+      <a href="https://github.com/Yoxara" target="_blank" aria-label="GitHub de Yoxara"><i class="fab fa-github"></i></a>
+      <a href="https://www.lpthe.jussieu.fr/" target="_blank" aria-label="Sitio LPTHE"><i class="fas fa-university"></i></a>
+      <a href="https://inspirehep.net/authors/1785072" target="_blank" aria-label="Perfil en INSPIRE-HEP"><i class="fas fa-book"></i></a>
     </div>
   </div>
 </section>
@@ -115,6 +162,134 @@
   </div>
 </footer>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Scrollspy + Publications (INSPIRE-HEP) -->
+<script>
+  // ===== Scrollspy simple para activar el link del menú =====
+  const sections = document.querySelectorAll("section[id]");
+  const links = document.querySelectorAll(".navbar-nav .nav-link");
+  function setActive() {
+    let current = "";
+    const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
+    sections.forEach(sec => {
+      const top = sec.offsetTop - offset - 10;
+      if (window.scrollY >= top) current = sec.id;
+    });
+    links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === `#${current}`));
+  }
+  document.addEventListener("scroll", setActive, { passive: true });
+  window.addEventListener("load", setActive);
+
+  // ====== Publications desde INSPIRE-HEP ======
+  const INSPIRE_AUTHOR_ID = "1785072";
+  const PUBS_SIZE = 10;
+
+  const escapeHTML = (str) => (str || "").replace(/[&<>"']/g, m => (
+    { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[m]
+  ));
+
+  function yearFrom(rec) {
+    const md = rec.metadata || {};
+    return md.earliest_date?.slice(0,4)
+        || md.publication_info?.[0]?.year
+        || "";
+  }
+  function venueFrom(rec) {
+    const p = rec.metadata?.publication_info?.[0];
+    if (!p) return "";
+    const journal = [p.journal_title, p.journal_volume, p.page_start].filter(Boolean).join(" ");
+    return journal || (p.conference_record?.title || "");
+  }
+  function arxivFrom(rec) {
+    const a = rec.metadata?.arxiv_eprints?.[0]?.value;
+    return a ? `https://arxiv.org/abs/${a}` : "";
+  }
+  function doiFrom(rec) {
+    const d = rec.metadata?.dois?.[0]?.value;
+    return d ? `https://doi.org/${d}` : "";
+  }
+  function inspireLink(rec) {
+    const id = rec.metadata?.control_number;
+    return id ? `https://inspirehep.net/literature/${id}` : "#";
+  }
+  function titleFrom(rec) {
+    return rec.metadata?.titles?.[0]?.title || "Untitled";
+  }
+
+  function renderPublications(records) {
+    const container = document.getElementById("publications-list");
+    if (!container) return;
+
+    if (!records?.length) {
+      container.innerHTML = `<div class="alert alert-light text-center">
+        No publications found on INSPIRE-HEP.
+      </div>`;
+      return;
+    }
+
+    const html = records.map(rec => {
+      const title = escapeHTML(titleFrom(rec));
+      const year = yearFrom(rec);
+      const venue = escapeHTML(venueFrom(rec));
+      const citeCount = rec.metadata?.citation_count ?? null;
+
+      const links = [
+        { label: "INSPIRE", href: inspireLink(rec) },
+        { label: "arXiv", href: arxivFrom(rec) },
+        { label: "DOI", href: doiFrom(rec) },
+      ].filter(l => !!l.href);
+
+      const linksHtml = links.map(l =>
+        `<a href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`
+      ).join("");
+
+      return `
+        <div class="pub-item list-group-item">
+          <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div>
+              <div class="pub-title">${title}</div>
+              <div class="pub-meta mt-1">
+                ${year ? `<span>${year}</span>` : ""}
+                ${venue ? ` · <span>${venue}</span>` : ""}
+                ${Number.isInteger(citeCount) ? ` · <span>Cited: ${citeCount}</span>` : ""}
+              </div>
+            </div>
+            <div class="pub-links mt-2 mt-md-0">
+              ${linksHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    container.innerHTML = html;
+  }
+
+  async function loadPublications() {
+    const url = `https://inspirehep.net/api/literature` +
+      `?q=authors.recid:${encodeURIComponent(INSPIRE_AUTHOR_ID)}` +
+      `&sort=mostrecent&size=${PUBS_SIZE}`;
+    try {
+      const res = await fetch(url, { headers: { "Accept": "application/json" } });
+      if (!res.ok) throw new Error("INSPIRE-HEP request failed");
+      const data = await res.json();
+      const records = data?.hits?.hits || [];
+      renderPublications(records);
+    } catch (err) {
+      console.error(err);
+      const container = document.getElementById("publications-list");
+      if (container) {
+        container.innerHTML = `<div class="alert alert-warning">
+          Couldn’t load publications from INSPIRE-HEP. <a href="https://inspirehep.net/authors/1785072" target="_blank" rel="noopener">Open profile</a>.
+        </div>`;
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadPublications);
+</script>
+
 </body>
 </html>
