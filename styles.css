@@ -15,13 +15,14 @@ body {
 /* Hero Section */
 .hero-section {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('hero-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('assets/hero-bg.jpg') center/cover no-repeat;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 20px;
+  background-color: #0d1117; /* fallback si no carga imagen */
 }
 .animate-text {
   font-size: 3rem;
@@ -35,9 +36,24 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 75, 43, 0.25);
 }
 .btn-gradient:hover {
   transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Navbar + espaciado */
+:root { --nav-h: 72px; }
+section {
+  scroll-margin-top: calc(var(--nav-h) + 16px);
+  padding: 80px 0;
+}
+header.hero-section { scroll-margin-top: var(--nav-h); }
+.navbar .nav-link.active,
+.navbar .nav-link:focus,
+.navbar .nav-link:hover {
+  color: #fff !important;
   opacity: 0.9;
 }
 
@@ -71,24 +87,143 @@ body {
   transform: translateY(-10px);
 }
 
+/* Publications list */
+#publications-list .pub-item {
+  display: block;
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+#publications-list .pub-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.08);
+}
+.pub-title {
+  font-weight: 600;
+  line-height: 1.35;
+}
+.pub-meta {
+  font-size: .95rem;
+  opacity: .8;
+}
+.pub-links a {
+  text-decoration: none;
+  margin-right: 12px;
+  font-size: .95rem;
+}
+
+/* Timeline (Talks) */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #ff4b2b, #ff416c);
+  opacity: 0.6;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 22px;
+}
+.timeline-dot {
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff4b2b;
+  box-shadow: 0 0 0 4px rgba(255,75,43,.15);
+}
+.timeline-content {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+  padding: 16px 18px;
+}
+.timeline-time {
+  font-weight: 700;
+  color: #ff4b2b;
+  margin-bottom: 6px;
+}
+.timeline-link {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+/* Lista talks sencilla (por si usas list-group en otra parte) */
+#talks .list-group-item {
+  border: none;
+  background: transparent;
+  padding-left: 0;
+  position: relative;
+}
+#talks .list-group-item::before {
+  content: "•";
+  color: #ff4b2b;
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+/* Contact icons */
+#contact .social-icons a {
+  display: inline-flex;
+  width: 44px; height: 44px;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: #111; color: #fff;
+  margin: 0 6px;
+  transition: transform .2s ease, background .2s ease;
+}
+#contact .social-icons a:hover {
+  transform: translateY(-3px);
+  background: #ff416c;
+}
+
 /* Footer */
 .footer {
   background-color: #111;
   color: #eee;
   padding: 40px 0;
 }
-.footer .social-icons i {
-  font-size: 20px;
-  margin: 0 10px;
-  transition: color 0.3s;
-  color: white;
-}
-.footer .social-icons i:hover {
-  color: #ff416c;
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 /* Animations */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Alternado de fondo claro */
+section.bg-light { background: #f6f7fb; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .animate-text { font-size: 2.2rem; }
+}
+@media (max-width: 576px) {
+  .timeline::before { left: 10px; }
+  .timeline-dot { left: 2px; }
+  .timeline-content { padding: 14px; }
+}
+
+/* Accesibilidad: focus visible */
+:focus-visible {
+  outline: 3px solid #ff4b2b;
+  outline-offset: 2px;
+  border-radius: 8px;
 }
