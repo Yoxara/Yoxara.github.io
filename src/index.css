@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cosmic Physics Theme — dark by default */
+    --background: 235 40% 6%;
+    --foreground: 220 30% 96%;
+
+    --card: 235 35% 9%;
+    --card-foreground: 220 30% 96%;
+
+    --popover: 235 35% 9%;
+    --popover-foreground: 220 30% 96%;
+
+    --primary: 290 95% 65%;            /* magenta */
+    --primary-foreground: 235 40% 6%;
+
+    --secondary: 195 100% 60%;         /* cyan */
+    --secondary-foreground: 235 40% 6%;
+
+    --muted: 235 25% 14%;
+    --muted-foreground: 220 15% 70%;
+
+    --accent: 50 100% 60%;             /* yellow accent */
+    --accent-foreground: 235 40% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 30% 96%;
+
+    --border: 235 25% 18%;
+    --input: 235 25% 18%;
+    --ring: 290 95% 65%;
+
+    --radius: 1rem;
+
+    /* Brand colors */
+    --magenta: 290 95% 65%;
+    --cyan: 195 100% 60%;
+    --violet: 260 90% 65%;
+    --yellow: 50 100% 60%;
+
+    /* Gradients */
+    --gradient-cosmos: linear-gradient(135deg, hsl(290 95% 65%) 0%, hsl(260 90% 65%) 50%, hsl(195 100% 60%) 100%);
+    --gradient-aurora: linear-gradient(135deg, hsl(290 95% 65% / 0.85), hsl(195 100% 60% / 0.85));
+    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(290 95% 65% / 0.25), transparent 60%);
+    --gradient-text: linear-gradient(135deg, hsl(290 95% 75%), hsl(195 100% 70%));
+    --gradient-card: linear-gradient(145deg, hsl(235 35% 11% / 0.9), hsl(235 35% 7% / 0.9));
+
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(290 95% 65% / 0.35);
+    --shadow-glow-cyan: 0 0 60px hsl(195 100% 60% / 0.3);
+    --shadow-elevated: 0 25px 60px -20px hsl(290 95% 30% / 0.5);
+
+    /* Motion */
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 235 40% 6%;
+    --sidebar-foreground: 220 30% 96%;
+    --sidebar-primary: 290 95% 65%;
+    --sidebar-primary-foreground: 235 40% 6%;
+    --sidebar-accent: 235 25% 14%;
+    --sidebar-accent-foreground: 220 30% 96%;
+    --sidebar-border: 235 25% 18%;
+    --sidebar-ring: 290 95% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+    background-image:
+      radial-gradient(at 15% 10%, hsl(var(--magenta) / 0.18) 0px, transparent 40%),
+      radial-gradient(at 85% 30%, hsl(var(--cyan) / 0.14) 0px, transparent 45%),
+      radial-gradient(at 50% 90%, hsl(var(--violet) / 0.18) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: hsl(var(--magenta) / 0.4);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-text);
+  }
+  .bg-cosmos {
+    background-image: var(--gradient-cosmos);
+  }
+  .glow-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--border));
+    transition: all 0.4s var(--transition-smooth);
+  }
+  .glow-card:hover {
+    border-color: hsl(var(--magenta) / 0.5);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+  }
+  .nav-pill {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-300;
+    color: hsl(var(--muted-foreground));
+  }
+  .nav-pill:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--muted));
+  }
+  .nav-pill.active {
+    color: hsl(var(--primary-foreground));
+    background: var(--gradient-cosmos);
+    box-shadow: var(--shadow-glow);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.6) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+  .animate-spin-slow {
+    animation: spin 18s linear infinite;
+  }
+  .animate-orbit {
+    animation: orbit 14s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 30px hsl(var(--magenta) / 0.3); }
+  50% { box-shadow: 0 0 60px hsl(var(--magenta) / 0.6), 0 0 90px hsl(var(--cyan) / 0.3); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+}
