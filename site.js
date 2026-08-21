@@ -1,27 +1,41 @@
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Subtle nav shadow once scrolled
-const navEl = document.querySelector('.nav');
-if (navEl) {
-  const onNavScroll = () => {
-    navEl.style.boxShadow = window.scrollY > 8 ? '0 4px 16px -8px rgba(28,43,61,.16)' : 'none';
-  };
-  window.addEventListener('scroll', onNavScroll, { passive: true });
-  onNavScroll();
-}
-
-// Mobile menu toggle
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+const nav = document.querySelector('.nav');
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
-if (burger) {
+const updateNav = () => {
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 8);
+};
+const closeMenu = () => {
+  if (!burger || !navLinks) return;
+  navLinks.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Open navigation menu');
+};
+if (burger && navLinks) {
   burger.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
   });
 }
-
-// Scroll-reveal (respects prefers-reduced-motion via CSS)
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('in'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add('in'));
+}

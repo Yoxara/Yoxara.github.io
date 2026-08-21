@@ -1,99 +1,107 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CV — Yoxara Sánchez-Villamizar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<meta content="Curriculum vitae, skills, complementary education, and downloadable PDF." name="description"/>
+<meta content="#101d36" name="theme-color"/>
+<link href="https://yoxara.github.io/cv.html" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
-<body>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-mark">Y. Sánchez-Villamizar</a>
-    <button class="nav-burger" id="burger" aria-expanded="false">Menu ☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="career.html">Career</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="talks.html">Talks</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="cv.html" class="active">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header class="banner banner-page" style="background-image:url('images/bg-cv.jpg')">
-  <div class="banner-overlay">
-    <div class="container">
-  <div class="eyebrow">Curriculum Vitae</div>
-  <h1 class="page-title">CV</h1>
-  <p class="page-intro">Full CV, including complementary education, grants, and full talk list.</p>
+<body class="page-cv">
+<a class="skip-link" href="#main">Skip to content</a>
+<nav aria-label="Primary navigation" class="nav">
+<div class="nav-inner">
+<a aria-label="Yoxara Sánchez-Villamizar — Home" class="nav-mark" href="index.html">
+<span class="nav-monogram">YSV</span>
+<span class="nav-name">Y. Sánchez-Villamizar</span>
+</a>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Open navigation menu" class="nav-burger" id="burger" type="button">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="publications.html">Publications</a></li>
+<li><a href="talks.html">Talks</a></li>
+<li><a href="career.html">Career</a></li>
+<li><a href="courses.html">Teaching</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a aria-current="page" class="active nav-cv" href="cv.html">CV</a></li>
+</ul>
 </div>
-  </div>
+</nav>
+<header class="banner banner-page" style="background-image:url('images/bg-cv.jpg')">
+<div class="banner-overlay">
+<div class="container">
+<div class="eyebrow">Curriculum Vitae</div>
+<h1 class="page-title">CV</h1>
+<p class="page-intro">Full CV, including complementary education, grants, and full talk list.</p>
+</div>
+</div>
 </header>
-
-<main class="container page-main">
-  <section class="reveal" style="border-bottom:none;">
-    <div class="hero-links">
-      <a href="cv.pdf" class="primary todo" data-todo=" ">Download PDF</a>
-    </div>
-
-    <h2 class="section-title" style="margin-top:36px;">Skills</h2>
-    <div class="two-col">
-      <div class="skills-block">
-        <h4>Computational</h4>
-        <p>Mathematica, Python (pylhe, pyslha, uproot, pyroot, numpy, pandas, sympy), LaTeX, Linux/Bash, C++, HTML</p>
-        <h4>HEP Tools</h4>
-        <p>SARAH, FeynRules, CalcHEP, LanHEP, MadGraph5, Pythia8, Delphes3, micrOMEGAs, MadDM, MadAnalysis5, SModelS</p>
-      </div>
-      <div class="skills-block">
-        <h4>Languages</h4>
-        <p>Spanish (native), Portuguese (fluent), English (intermediate), German (basic)</p>
-      </div>
-    </div>
-
-    <h2 class="section-title" style="margin-top:8px;">Complementary education</h2>
-    <ul class="simple-list">
-      <li><span class="yr">2024</span><span>Pre-SUSY School — Supersymmetry and Unification of Fundamental Forces<span class="place">IFT UAM-CSIC, Madrid, Spain</span></span></li>
-      <li><span class="yr">2023</span><span>Experimental Collider Physics<span class="place">UNESP, Brazil</span></span></li>
-      <li><span class="yr">2022</span><span>ICTP-SAIFR/MITP Summer School on Particle Physics BSM<span class="place">São Paulo, Brazil</span></span></li>
-      <li><span class="yr">2022</span><span>Summer School on Cosmology<span class="place">ICTP-Trieste, Italy</span></span></li>
-      <li><span class="yr">2021</span><span>Hadron Collider Physics Summer School<span class="place">CERN-Fermilab</span></span></li>
-      <li><span class="yr">2021</span><span>International Neutrino Summer School<span class="place">CERN</span></span></li>
-      <li><span class="yr">2021</span><span>Summer School on Particle Physics<span class="place">ICTP-Trieste, Italy</span></span></li>
-      <li><span class="yr">2021</span><span>Jorge André Swieca Summer School in Particles and Fields<span class="place">Brazilian Physical Society</span></span></li>
-      <li><span class="yr">2021</span><span>Dark Matter School<span class="place">International Institute of Physics, UFRN</span></span></li>
-      <li><span class="yr">2020</span><span>PASCCO — Particles, Astroparticles, Fields and Cosmology<span class="place">IIP, UFRN</span></span></li>
-      <li><span class="yr">2017</span><span>Experimental Methods and Techniques in Nuclear and Particle Physics<span class="place">University of São Paulo</span></span></li>
-    </ul>
-    <p class="todo" data-todo="Summary list — the full version detailing my further education is in my CV (PDF)">
-      <!-- [Summary list — the full version detailing my further education is in my CV (PDF)] -->
-    </p>
-  </section>
+<main class="container page-main" id="main">
+<section class="reveal">
+<div class="cv-pdf-card">
+<div><div class="eyebrow">PDF version</div><h2>Curriculum Vitae</h2><p>The complete CV can be opened in the browser or downloaded as a PDF.</p></div>
+<div class="hero-links cv-actions"><a class="primary" href="cv.pdf" rel="noopener" target="_blank">View PDF ↗</a><a download="" href="cv.pdf">Download PDF</a></div>
+</div>
+<h2 class="section-title section-title-spaced">Skills</h2>
+<div class="two-col">
+<div class="skills-block">
+<h4>Computational</h4>
+<p>Mathematica, Python (pylhe, pyslha, uproot, pyroot, numpy, pandas, sympy), LaTeX, Linux/Bash, C++, HTML</p>
+<h4>HEP Tools</h4>
+<p>SARAH, FeynRules, CalcHEP, LanHEP, MadGraph5, Pythia8, Delphes3, micrOMEGAs, MadDM, MadAnalysis5, SModelS</p>
+</div>
+<div class="skills-block">
+<h4>Languages</h4>
+<p>Spanish (native), Portuguese (fluent), English (intermediate), German (basic)</p>
+</div>
+</div>
+<h2 class="section-title section-title-compact">Complementary education</h2>
+<ul class="simple-list">
+<li><span class="yr">2024</span><span><a href="https://indico.cern.ch/event/1358127/" rel="noopener" target="_blank">Pre-SUSY School 2024: Supersymmetry and Unification of Fundamental Forces ↗</a><span class="place">Institute of Theoretical Physics UAM-CSIC, Madrid, Spain · 40 hours</span></span></li>
+<li><span class="yr">2023</span><span><a href="https://www.sprace.org.br/twiki/bin/view/Main/ExpHEP" rel="noopener" target="_blank">Experimental Collider Physics ↗</a><span class="place">UNESP, Brazil · 90 hours</span></span></li>
+<li><span class="yr">2022</span><span><a href="https://www.ictp-saifr.org/bsmp2022/" rel="noopener" target="_blank">ICTP-SAIFR/MITP Summer School on Particle Physics BSM ↗</a><span class="place">ICTP-SAIFR, São Paulo, Brazil · 80 hours</span></span></li>
+<li><span class="yr">2022</span><span><a href="https://indico.ictp.it/event/9810/" rel="noopener" target="_blank">Summer School on Cosmology ↗</a><span class="place">ICTP, Trieste, Italy · 80 hours</span></span></li>
+<li><span class="yr">2021</span><span><a href="https://indico.cern.ch/event/1005703/" rel="noopener" target="_blank">14th MCnet Summer School ↗</a><span class="place">MCnet</span></span></li>
+<li><span class="yr">2021</span><span><a href="https://indico.cern.ch/event/1023573/" rel="noopener" target="_blank">Hadron Collider Physics Summer School ↗</a><span class="place">CERN–Fermilab · 90 hours</span></span></li>
+<li><span class="yr">2021</span><span><a href="https://indico.cern.ch/event/1011452/" rel="noopener" target="_blank">International Neutrino Summer School ↗</a><span class="place">CERN · 50 hours</span></span></li>
+<li><span class="yr">2021</span><span><a href="https://indico.ictp.it/event/9538/" rel="noopener" target="_blank">Summer School on Particle Physics ↗</a><span class="place">ICTP, Trieste, Italy · 80 hours</span></span></li>
+<li><span class="yr">2021</span><span><a href="http://www.sbfisica.org.br/~evjaspc/xxi/" rel="noopener" target="_blank">Jorge André Swieca Summer School in Particles and Fields ↗</a><span class="place">Brazilian Physical Society · 30 hours</span></span></li>
+<li><span class="yr">2021</span><span>Introduction to Data Analysis in High Energy Physics and Associated Tools — Parts I, II and III<span class="place">Rio de Janeiro State University (UERJ), Brazil · 90 hours</span></span></li>
+<li><span class="yr">2021</span><span><a href="https://astroparticleiip.wixsite.com/escola" rel="noopener" target="_blank">Dark Matter School ↗</a><span class="place">International Institute of Physics, UFRN, Brazil · 11 hours</span></span></li>
+<li><span class="yr">2020</span><span><a href="https://escolapascco.wixsite.com/2020/" rel="noopener" target="_blank">PASCCO — Particles, Astroparticles, Fields and Cosmology ↗</a><span class="place">International Institute of Physics, UFRN, Brazil · 36 hours</span></span></li>
+<li><span class="yr">2020</span><span><a href="https://www.ictp-saifr.org/spp2020/" rel="noopener" target="_blank">ICTP-Trieste/ICTP-SAIFR School on Particle Physics ↗</a><span class="place">56 hours</span></span></li>
+<li><span class="yr">2020</span><span>XVII Summer Formative Activities — Global Teacher edition<span class="place">Brazilian Center for Research in Physics (CBPF), Brazil · 44 hours</span></span></li>
+<li><span class="yr">2017</span><span>Experimental Methods and Techniques in Nuclear and Particle Physics<span class="place">Institute of Physics, University of São Paulo, Brazil · 180 hours</span></span></li>
+</ul>
+</section>
 </main>
-
-<footer>
-  <div class="footer-social">
-    <a href="https://orcid.org/0000-0001-6792-1734" target="_blank" rel="noopener">ORCID</a>
-    <span>·</span>
-    <a href="https://inspirehep.net/authors/1785072" target="_blank" rel="noopener">INSPIRE-HEP</a>
-    <span>·</span>
-    <a href="https://scholar.google.com/citations?user=L2GXOJ8AAAAJ&hl" target="_blank" rel="noopener">Scholar</a>
-    <span>·</span>
-    <a href="#" class="todo" data-todo="@yoxarasv">Instagram</a>
-    <span>·</span>
-    <a href="#" class="todo" data-todo="Yoxara">GitHub</a>
-  </div>
-  <p>© <span id="year"></span> Yoxara Sánchez-Villamizar</p>
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>
+<div class="footer-name">Yoxara Sánchez-Villamizar</div>
+<p>Particle physics · dark matter · BSM collider phenomenology</p>
+</div>
+<div aria-label="External profiles" class="footer-social">
+<a href="https://orcid.org/0000-0001-6792-1734" rel="noopener" target="_blank">ORCID</a>
+<a href="https://inspirehep.net/authors/1785072" rel="noopener" target="_blank">INSPIRE-HEP</a>
+<a href="https://scholar.google.com/citations?user=L2GXOJ8AAAAJ" rel="noopener" target="_blank">Scholar</a>
+<a href="https://github.com/Yoxara" rel="noopener" target="_blank">GitHub</a>
+<a href="https://www.instagram.com/yoxara_sv/" rel="noopener" target="_blank">Instagram</a>
+</div>
+</div>
+<div class="container footer-bottom">© <span id="year"></span> Yoxara Sánchez-Villamizar</div>
 </footer>
-
 <script src="site.js"></script>
 </body>
 </html>
