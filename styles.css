@@ -273,6 +273,207 @@ details.more-talks .citation:first-of-type{margin-top:18px}
   line-height:1;
 }
 
+
+/* =========================================================
+   COURSE DETAIL PAGE
+   ========================================================= */
+
+.course-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:22px;
+  color:var(--accent);
+  font-size:12.5px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.course-link:hover{
+  color:var(--accent-strong);
+  text-decoration:none;
+}
+
+.course-link span{
+  transition:transform .18s var(--ease);
+}
+
+.course-link:hover span{
+  transform:translateX(3px);
+}
+
+
+/* Back link */
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  margin-bottom:28px;
+  color:var(--muted);
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:500;
+  text-decoration:none;
+}
+
+.back-link:hover{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+
+/* Course introduction */
+
+.course-detail-header{
+  max-width:760px;
+}
+
+.course-detail-header .section-title{
+  margin-bottom:14px;
+}
+
+.course-description{
+  max-width:65ch;
+  margin:0;
+}
+
+
+/* =========================================================
+   LECTURE GRID
+   ========================================================= */
+
+.lecture-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+  gap:16px;
+}
+
+
+/* Individual lecture */
+
+.lecture-card{
+  display:flex;
+  flex-direction:column;
+  min-height:260px;
+  padding:24px;
+
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+
+  background:var(--surface);
+  box-shadow:var(--shadow-sm);
+
+  transition:
+    border-color .2s var(--ease),
+    box-shadow .2s var(--ease),
+    transform .2s var(--ease);
+}
+
+.lecture-card:hover{
+  border-color:#c6b89f;
+  box-shadow:var(--shadow-md);
+  transform:translateY(-2px);
+}
+
+
+/* Lecture number */
+
+.lecture-number{
+  margin-bottom:9px;
+
+  color:var(--accent);
+
+  font-family:var(--mono);
+  font-size:9.5px;
+  font-weight:500;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+
+/* Lecture title */
+
+.lecture-card h3{
+  margin:0 0 10px;
+
+  color:var(--ink);
+
+  font-family:var(--serif);
+  font-size:19px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+
+/* Lecture description */
+
+.lecture-card > p{
+  margin:0 0 22px;
+
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.6;
+}
+
+
+/* Resources */
+
+.lecture-resources{
+  display:flex;
+  flex-direction:column;
+
+  margin-top:auto;
+  padding-top:13px;
+
+  border-top:1px solid var(--line);
+}
+
+
+.lecture-resources a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:18px;
+  padding:9px 0;
+
+  color:var(--ink-2);
+
+  font-size:12.5px;
+  font-weight:500;
+
+  text-decoration:none;
+}
+
+
+.lecture-resources a + a{
+  border-top:1px solid var(--line);
+}
+
+
+.lecture-resources a:hover{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+
+.resource-type{
+  color:var(--accent);
+
+  font-family:var(--mono);
+  font-size:9px;
+  font-weight:500;
+
+  letter-spacing:.05em;
+
+  white-space:nowrap;
+}
+
+
+
 .contact-list{font-family:var(--sans)}
 .contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .contact-grid>div{display:flex;flex-direction:column;gap:5px;padding:18px 19px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
@@ -352,3 +553,6 @@ details.more-talks .citation:first-of-type{margin-top:18px}
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s var(--ease)}
   .reveal.in{opacity:1;transform:none}
 }
+
+
+
